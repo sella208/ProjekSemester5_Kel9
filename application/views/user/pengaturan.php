@@ -9,14 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="user/assets/images/polije.png">
-    <title>E-konseling</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>user/assets/images/polije.png">
+    <title>Pengaturan</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="user/assets/libs/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="user/assets/libs/jquery-minicolors/jquery.minicolors.css">
-    <link rel="stylesheet" type="text/css" href="user/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-    <link rel="stylesheet" type="text/css" href="user/assets/libs/quill/dist/quill.snow.css">
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>user/assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>user/assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>user/assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>user/assets/libs/quill/dist/quill.snow.css">
+    <link href="<?php echo base_url()?>user/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -39,9 +39,10 @@
     <!-- Main wrapper - style you can find in pages.scss -->
     <!-- ============================================================== -->
     <div id="main-wrapper">
-        <?php include('components/header.php') ?>
-        
-        <?php include('components/sidebar.php') ?>
+        <?php include('component/header.php')?>
+
+        <?php include('component/sidebar.php')?>
+
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
@@ -52,72 +53,57 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Home</h4>
-                        <div class="ml-auto text-right">
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">E-konseling</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Home</li>
-                                </ol>
-                            </nav>
-                        </div>
+                        <h4 class="page-title">Pengaturan</h4>
                     </div>
                 </div>
             </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="container">
-                <div class="row team-grid pt-4 pb-4 mt-0 justify-content-center">
-                    <div class="col-md-4 d-flex flex-wrap align-items-center">
-                        <img alt="foto mahasiswa" src="" class="img-thumbnail img-fluid">
-                    </div>
-                    <div class="col-md-8">
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-lg-12">
                         <div class="card">
-                            <div class="card-header">
-                                <h3 class="card-title text-center">
-                                    "Selamat Datang di E-konseling"
-                                    <br>
-                                    "Politeknik Negeri Jember"
-                                </h3>
-                            </div>
-                            <div class="card-body">
-                                <table class="table table-striped">
-                                    <tbody>
-                                        <tr>
-                                            <td>NIM</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Nama</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Alamat</td>  
-                                        </tr>
-                                        <tr>
-                                            <td>NoTelp/HP</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Program Studi</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Semester Tempuh</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Golongan</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Dosen Wali</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <form class="form-horizontal">
+                                <div class="card-body">
+                                    <h4 class="card-title">Ubah Password</h4>
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Password Lama</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="fname" placeholder="Password Lama">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Password Baru</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="lname" placeholder="Password baru">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Konfirmasi Password Baru</label>
+                                        <div class="col-sm-9">
+                                            <input type="password" class="form-control" id="lname" placeholder="Konfirmasi Password">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
+                         <!-- ============================================================== -->
                     </div>
                 </div>
-            </div>
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
                 <!-- ============================================================== -->
                 <!-- Right sidebar -->
                 <!-- ============================================================== -->
@@ -132,7 +118,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <?php include('components/footer.php') ?>
+            <?php include('component/footer.php')?>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
@@ -147,30 +133,30 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-    <script src="user/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="user/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="user/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="user/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="user/assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
-    <script src="dist/js/waves.js"></script>
+    <script src="<?php echo base_url()?>user/dist/js/waves.js"></script>
     <!--Menu sidebar -->
-    <script src="dist/js/sidebarmenu.js"></script>
+    <script src="<?php echo base_url()?>user/dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
+    <script src="<?php echo base_url()?>user/dist/js/custom.min.js"></script>
     <!-- This Page JS -->
-    <script src="user/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
-    <script src="dist/js/pages/mask/mask.init.js"></script>
-    <script src="user/assets/libs/select2/dist/js/select2.full.min.js"></script>
-    <script src="user/assets/libs/select2/dist/js/select2.min.js"></script>
-    <script src="user/assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
-    <script src="user/assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
-    <script src="user/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
-    <script src="user/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
-    <script src="user/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-    <script src="user/assets/libs/quill/dist/quill.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="<?php echo base_url()?>user/dist/js/pages/mask/mask.init.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/quill/dist/quill.min.js"></script>
     <script>
         //***********************************//
         // For select 2

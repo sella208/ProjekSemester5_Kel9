@@ -9,10 +9,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="user/assets/images/polije.png">
-    <title>Login</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo base_url()?>user/assets/images/polije.png">
+    <title>E-konseling</title>
     <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link href="<?php echo base_url()?>user/dist/css/style.min.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -42,7 +42,7 @@
             <div class="auth-box bg-dark border-top border-secondary">
                 <div id="loginform">
                     <div class="text-center p-t-20 p-b-20">
-                        <span class="db"><img src="user/assets/images/p.png" rel="icon" /></span>
+                        <span class="db"><img src="<?php echo base_url()?>user/assets/images/p.png" rel="icon" /></span>
                     </div>
                     <!-- Form -->
                     <form class="form-horizontal m-t-20" id="" action="<?php echo base_url(); ?>login/cek" method="post">
@@ -94,10 +94,10 @@
     <!-- ============================================================== -->
     <!-- All Required js -->
     <!-- ============================================================== -->
-    <script src="user/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="user/assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="user/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="<?php echo base_url()?>user/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- ============================================================== -->
     <!-- This page plugin js -->
     <!-- ============================================================== -->

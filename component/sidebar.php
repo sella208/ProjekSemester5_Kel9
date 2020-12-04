@@ -12,7 +12,7 @@
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
-            </div>
+            </div>  
             <!-- End Sidebar scroll-->
         </aside>
         <!-- ============================================================== -->
