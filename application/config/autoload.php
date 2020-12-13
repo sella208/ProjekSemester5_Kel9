@@ -47,7 +47,7 @@ $autoload['packages'] = array();
 | -------------------------------------------------------------------
 | These are the classes located in system/libraries/ or your
 | application/libraries/ directory, with the addition of the
-| 'database' library, which is somewhat of a special case.
+| 'database' library, which is somewhat of a special case. 
 |
 | Prototype:
 |
