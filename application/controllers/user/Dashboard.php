@@ -1,9 +1,9 @@
-<?php
+<?php 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data_kaprodi extends CI_Controller{
-
+class Dashboard extends CI_Controller
+{
     public function index(){
-        $this->load->view('admin/data_kaprodi');
+        $this->load->view('user/dashboard');
     }
 }

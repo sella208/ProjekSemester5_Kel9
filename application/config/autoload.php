@@ -47,7 +47,7 @@ $autoload['packages'] = array();
 | -------------------------------------------------------------------
 | These are the classes located in system/libraries/ or your
 | application/libraries/ directory, with the addition of the
-| 'database' library, which is somewhat of a special case. 
+| 'database' library, which is somewhat of a special case.
 |
 | Prototype:
 |
@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('m_profil');
+$autoload['model'] = array('m_profil', 'm_login', 'm_doswal');

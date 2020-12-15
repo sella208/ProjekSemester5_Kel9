@@ -15,12 +15,5 @@ class Data_doswal extends CI_Controller {
 		$this->load->view('admin/data_doswal', $data);
 	}
 
-	public function hapus ($id_doswal)
-	{
-		$where = array ('id' => $id_doswal);
-		$this->m_doswal->hapus_data($where, 'tb_dosenwali');
-		
-	}
-
 
 }
