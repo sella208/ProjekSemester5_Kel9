@@ -103,57 +103,52 @@
                             <div class="card-body">
                                 <table class="table table-striped">
                                     <tbody>
-                                        </tr>
-                                        <?php 
-                                        foreach ($mahasiswa as $mhs) :
-                                        ?>
-
                                         <tr>
                                             <td>NIM</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->nim_mhs ?></td>
+                                            <td><?php echo $nim_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Nama</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->nama_mhs ?></td>
+                                            <td><?php echo $nama_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Alamat</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->alamat_mhs ?></td>
+                                            <td><?php echo $alamat_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>NoTelp/HP</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->nohp_mhs ?></td>
+                                            <td><?php echo $nohp_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Program Studi</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->prodi_mhs ?></td>
+                                            <td><?php echo $prodi_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Semester Tempuh</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->semester_mhs ?></td>
+                                            <td><?php echo $semester_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Golongan</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->gol_mhs ?></td>
+                                            <td><?php echo $gol_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Dosen Wali</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->status_mhs ?></td>
+                                            <td><?php echo $status_mhs; ?></td>
                                         </tr>
                                         <tr>
                                             <td>Email</td>
                                             <td>:</td>
-                                            <td><?php echo $mhs->email_mhs ?></td>
+                                            <td><?php echo $email_mhs; ?></td>
                                         </tr>
-                                        <?php endforeach; ?>
+
                                     </tbody>
                                 </table>
                             </div>
