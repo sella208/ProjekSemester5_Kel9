@@ -15,7 +15,6 @@ class Profil extends CI_Controller {
         $d['mahasiswa'] = $this->db->get_where('tb_mhs', ['nim_mhs' =>
         $this->session->userdata('nim_mhs')])->row_array();
 		$get = $this->M_profil->usermhs();
-		// print_r($this->session->userdata('userdata'));
         $data = $get->row();
         $d['id_mhs'] = $data->id_mhs;
         $d['nim_mhs'] = $data->nim_mhs;
