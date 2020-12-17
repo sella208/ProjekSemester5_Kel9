@@ -73,11 +73,27 @@
                                             <th>Alamat</th>
                                             <th>Bidang</th>
                                             <th>Foto</th>
-                                            <th>Aksi</th>
+                                            <th colspan="2"> Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                           
+                                    <?php 
+                                        //$nomor=1;
+                                        foreach ($psikolog as $pkg) :
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $pkg->id_psikolog ?></td>
+                                            <td><?php echo $pkg->nama_psikolog ?></td>
+                                            <td><?php echo $pkg->nohp_psikolog ?></td>
+                                            <td><?php echo $pkg->email_psikolog ?></td> 
+                                            <td><?php echo $pkg->alamat_psikolog ?></td>
+                                            <td><?php echo $pkg->bidang_psikolog ?></td>
+                                            <td><?php echo $pkg->foto_psikolog ?></td>
+                                            <td onclick="javascript: return confirm('Anda yakin hapus?')">
+                                            <?php echo anchor('psikolog/hapus/'. $pkg->id_psikolog, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                                            <td></div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div></td>
+                                        </tr>
+                                        <?php endforeach; ?>  
                                     </tbody>
                                 </table>
                             </div>

@@ -68,8 +68,7 @@
                                         <tr>
                                             <th>No.</th>
                                             <th>Tanggal</th>
-                                            <th>Topik Konsultasi</th>
-                                            <th>Kesimpulan</th>
+                                            <th>Konsultasi</th>
                                             <th>Nama Mahasiswa</th>
                                             <th>Nama Pihak Konseling</th>
                                             <th>Status</th>
@@ -77,6 +76,27 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+                                        //$nomor=1;
+                                        foreach ($riwayatkonsultasi as $rwu) :
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $rwu->id_mhs ?></td>
+                                            <td><?php echo $rwu->id_doswal ?></td>
+                                            <td><?php echo $rwu->id_kaprodi ?></td>
+                                            <td><?php echo $rwu->status ?></td> 
+                                            <td><?php echo $rwu-> ?></td>
+                                            <td><?php echo $rwu-> ?></td>
+                                            <td><?php echo $rwu->?></td>
+
+
+
+                                            <td onclick="javascript: return confirm('Anda yakin hapus?')">
+                                            <?php echo anchor('admin/riwayat_konsultasi/hapus/'. $rwu->id_, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                                            <td></div class="btn btn-primary btn-sm"><button data-toggle="modal" data-target="#exampleModal<?= $->id_mhs ?>"><i class="fa fa-edit"></i></button></div></td>
+                                            <div class="modal fade" id="exampleModal<?= $mhs->id_mhs ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        </tr>
+                                        <?php endforeach; ?>
                                            
                                     </tbody>
                                 </table>

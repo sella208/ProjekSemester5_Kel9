@@ -6,10 +6,11 @@ class M_login extends CI_Model
         $username = $in['username'];
         $password = $in['password'];
 
-        $mhs =  $this->db->query("SELECT nim_mhs, password_mhs, nama_mhs as nama FROM tb_mhs WHERE nim_mhs='$username' AND password_mhs='$password'");
-        $dosenwali =  $this->db->query("SELECT * FROM tb_dosenwali WHERE nip_doswal= '$username' AND password_doswal = '$password'");
-        $kaprodi =  $this->db->query("SELECT * FROM tb_kaprodi WHERE nip_kaprodi= '$username' AND password_kaprodi = '$password'");
-        $pusatkarir =  $this->db->query("SELECT * FROM tb_pusatkarir WHERE nip_pusatkarir= '$username' AND password_pusatkarir = '$password'");
+
+        $mhs =  $this->db->query("SELECT nim_mhs, password_mhs FROM tb_mhs WHERE nim_mhs='$username' AND password_mhs='$password'");
+        $dosenwali =  $this->db->query("SELECT * FROM tb_dosenwali WHERE nip_doswal= '$username' AND password = '$password'");
+        $kaprodi =  $this->db->query("SELECT * FROM tb_kaprodi WHERE nip_kaprodi= '$username' AND password = '$password'");
+        $pusatkarir =  $this->db->query("SELECT * FROM tb_pusatkarir WHERE nip_pusatkarir= '$username' AND password = '$password'");
 
 		if ($mhs->num_rows() > 0) {
 			foreach ($mhs->result() as $data) {
@@ -17,7 +18,7 @@ class M_login extends CI_Model
 				$session['id_mhs'] = $data->id;
 				$session['nama_mhs'] = $data->nama;
 				$session['hak_akses'] = 'mahasiswa';
-				$this->session->set_userdata('userdata', $session);
+				$this->session->set_userdata($session);
 			}
 			redirect('user/profil');
 		} elseif ($dosenwali->num_rows() > 0) {
