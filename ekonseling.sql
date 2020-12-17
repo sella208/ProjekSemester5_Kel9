@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2020 at 04:02 PM
--- Server version: 10.1.35-MariaDB
--- PHP Version: 7.2.9
+-- Generation Time: Dec 11, 2020 at 04:13 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -52,14 +51,29 @@ INSERT INTO `tb_admin` (`id_admin`, `nama_admin`, `username`, `password`) VALUES
 
 CREATE TABLE `tb_chat` (
   `id_chat` int(11) NOT NULL,
-  `tgl_chat` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `isi_chat` text NOT NULL,
+  `tgl_chat` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `topik_chat` text NOT NULL,
   `id_mhs` int(11) NOT NULL,
   `id_doswal` int(11) NOT NULL,
   `id_kaprodi` int(11) NOT NULL,
   `id_pusatkarir` int(11) NOT NULL,
-  `id_psikolog` int(11) NOT NULL
+  `id_psikolog` int(11) NOT NULL,
+  `status_chat` varchar(10) NOT NULL,
+  `kesimpulan_chat` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_detail_chat`
+--
+
+CREATE TABLE `tb_detail_chat` (
+  `id_detail_chat` int(10) NOT NULL,
+  `id_chat` int(10) NOT NULL,
+  `isi_chat` text NOT NULL,
+  `tanggal_chat` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -69,14 +83,14 @@ CREATE TABLE `tb_chat` (
 
 CREATE TABLE `tb_dosenwali` (
   `id_doswal` int(11) NOT NULL,
-  `nip_doswal` varchar(20) DEFAULT NULL,
+  `nip_doswal` int(20) DEFAULT NULL,
   `nama_doswal` varchar(100) DEFAULT NULL,
   `password_doswal` varchar(20) DEFAULT NULL,
   `alamat_doswal` varchar(100) NOT NULL,
   `nohp_doswal` varchar(13) NOT NULL,
   `email_doswal` varchar(50) DEFAULT NULL,
   `nidn_doswal` varchar(11) DEFAULT NULL,
-  `jabatan` varchar(30) DEFAULT NULL,
+  `jabatan_doswal` varchar(30) DEFAULT NULL,
   `status_pegawai` varchar(30) DEFAULT NULL,
   `gol_doswal` varchar(20) DEFAULT NULL,
   `tempat_lahir` varchar(30) NOT NULL,
@@ -89,12 +103,12 @@ CREATE TABLE `tb_dosenwali` (
 -- Dumping data for table `tb_dosenwali`
 --
 
-INSERT INTO `tb_dosenwali` (`id_doswal`, `nip_doswal`, `nama_doswal`, `password_doswal`, `alamat_doswal`, `nohp_doswal`, `email_doswal`, `nidn_doswal`, `jabatan`, `status_pegawai`, `gol_doswal`, `tempat_lahir`, `tanggal_lahir`, `prodi_doswal`, `foto_doswal`) VALUES
-(1, '197909212005011001', 'I Putu Dody Lesmana, ST, MT', '197909212005011001', '', '', 'IPutuDody@polije.ac.id', '0021097903', 'Lektor', 'PNS', 'Penata/IIIc', 'Jember', '1979-09-21', 'Teknik Informatika', ''),
-(2, '197405192003121002', 'Nugroho Setyo Wibowo, ST, MT', '197405192003121002', '', '085236329999', 'nugroho@polije.ac.id', '0019057403', 'Lektor', 'PNS', 'Pembina/IVa', '', '1974-05-19', 'Teknik Informatika', ''),
-(3, '197111151998021001', 'Adi Heru Utomo, S.Kom., M.Kom', '197111151998021001', '', '085236010820', 'adiheru@polije.ac.id', '0015117106', 'Lektor Kepala', 'PNS', 'Pembina/IVa', '', '1971-11-15', 'Teknik Informatika', ''),
-(4, '197709292005011003', 'Didit Rahmat Hartadi, S.Kom., MT', '197709292005011003', 'Jember', '', 'didithartadi@polije.ac.id', '0029097704', 'Lektor', 'PNS', 'Penata/IIIc', 'Jember', '1977-09-29', 'Manajemen Informatika', ''),
-(5, '197011282003121001', 'Hariyono Rakhmad, Spd., M.Kom', '197011282003121001', '', '', 'harirakhmad@polije.ac.id', '0028117002', 'Lektor', 'PNS', 'Penata Tk.I/IId', '', '1970-11-28', 'Teknik Komputer', '');
+INSERT INTO `tb_dosenwali` (`id_doswal`, `nip_doswal`, `nama_doswal`, `password_doswal`, `alamat_doswal`, `nohp_doswal`, `email_doswal`, `nidn_doswal`, `jabatan_doswal`, `status_pegawai`, `gol_doswal`, `tempat_lahir`, `tanggal_lahir`, `prodi_doswal`, `foto_doswal`) VALUES
+(1, 2147483647, 'I Putu Dody Lesmana, ST, MT', '197909212005011001', '', '', 'IPutuDody@polije.ac.id', '0021097903', 'Lektor', 'PNS', 'Penata/IIIc', 'Jember', '1979-09-21', 'Teknik Informatika', ''),
+(2, 2147483647, 'Nugroho Setyo Wibowo, ST, MT', '197405192003121002', '', '085236329999', 'nugroho@polije.ac.id', '0019057403', 'Lektor', 'PNS', 'Pembina/IVa', '', '1974-05-19', 'Teknik Informatika', ''),
+(3, 2147483647, 'Adi Heru Utomo, S.Kom., M.Kom', '197111151998021001', '', '085236010820', 'adiheru@polije.ac.id', '0015117106', 'Lektor Kepala', 'PNS', 'Pembina/IVa', '', '1971-11-15', 'Teknik Informatika', ''),
+(4, 2147483647, 'Didit Rahmat Hartadi, S.Kom., MT', '197709292005011003', 'Jember', '', 'didithartadi@polije.ac.id', '0029097704', 'Lektor', 'PNS', 'Penata/IIIc', 'Jember', '1977-09-29', 'Manajemen Informatika', ''),
+(5, 2147483647, 'Hariyono Rakhmad, Spd., M.Kom', '197011282003121001', '', '', 'harirakhmad@polije.ac.id', '0028117002', 'Lektor', 'PNS', 'Penata Tk.I/IId', '', '1970-11-28', 'Teknik Komputer', '');
 
 -- --------------------------------------------------------
 
@@ -111,7 +125,7 @@ CREATE TABLE `tb_kaprodi` (
   `nohp_kaprodi` varchar(13) NOT NULL,
   `email_kaprodi` varchar(50) DEFAULT NULL,
   `nidn_kaprodi` varchar(11) DEFAULT NULL,
-  `jabatan` varchar(30) DEFAULT NULL,
+  `jabatan_kaprodi` varchar(30) DEFAULT NULL,
   `status_kaprodi` varchar(30) DEFAULT NULL,
   `golongan_kaprodi` varchar(20) DEFAULT NULL,
   `tempat_lahir` varchar(30) NOT NULL,
@@ -124,7 +138,7 @@ CREATE TABLE `tb_kaprodi` (
 -- Dumping data for table `tb_kaprodi`
 --
 
-INSERT INTO `tb_kaprodi` (`id_kaprodi`, `nip_kaprodi`, `nama_kaprodi`, `password_kaprodi`, `alamat_kaprodi`, `nohp_kaprodi`, `email_kaprodi`, `nidn_kaprodi`, `jabatan`, `status_kaprodi`, `golongan_kaprodi`, `tempat_lahir`, `tanggal_lahir`, `prodi_kaprodi`, `foto_kaprodi`) VALUES
+INSERT INTO `tb_kaprodi` (`id_kaprodi`, `nip_kaprodi`, `nama_kaprodi`, `password_kaprodi`, `alamat_kaprodi`, `nohp_kaprodi`, `email_kaprodi`, `nidn_kaprodi`, `jabatan_kaprodi`, `status_kaprodi`, `golongan_kaprodi`, `tempat_lahir`, `tanggal_lahir`, `prodi_kaprodi`, `foto_kaprodi`) VALUES
 (1, '199002272018032001', 'Trismayanti Dwi P, S.Kom., M.C', '199002272018032001', '', '085859184555', 'trismayantidwipuspitasari@gmail.com', '8868110016', 'Tenaga Pengajar', 'PNS', '', '', '1990-02-27', 'Teknik Informatika', ''),
 (2, '197808192005012001', 'Ika Widiastuti, S.ST, MT', '197808192005012001', '', '081249794912', 'ika_widiastuti@polije.ac.id', '0019087803', 'Lektor', 'PNS', 'Penata/IIIc', '', '1978-08-19', 'Manajemen Informatika', ''),
 (3, '197009292003121001', 'Yogiswara, ST, MT', '197009292003121001', '', '081249735955', 'yogipoltek@gmail.com', '0029097005', 'Lektor', 'PNS', 'Penata/IIIc', '', '1970-09-29', 'Teknik Komputer', '');
@@ -216,6 +230,12 @@ ALTER TABLE `tb_chat`
   ADD PRIMARY KEY (`id_chat`);
 
 --
+-- Indexes for table `tb_detail_chat`
+--
+ALTER TABLE `tb_detail_chat`
+  ADD PRIMARY KEY (`id_detail_chat`);
+
+--
 -- Indexes for table `tb_dosenwali`
 --
 ALTER TABLE `tb_dosenwali`
@@ -262,16 +282,22 @@ ALTER TABLE `tb_chat`
   MODIFY `id_chat` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `tb_detail_chat`
+--
+ALTER TABLE `tb_detail_chat`
+  MODIFY `id_detail_chat` int(10) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `tb_dosenwali`
 --
 ALTER TABLE `tb_dosenwali`
-  MODIFY `id_doswal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_doswal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tb_kaprodi`
 --
 ALTER TABLE `tb_kaprodi`
-  MODIFY `id_kaprodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kaprodi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_mhs`
